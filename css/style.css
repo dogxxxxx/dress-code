@@ -1,0 +1,273 @@
+/* =========================================================
+   婚禮 Dress Code 網站樣式
+   風格：手繪 / 紙感 / 溫暖色調
+   ========================================================= */
+
+:root {
+  --color-paper: #faf5ea;
+  --color-paper-edge: #f1e6d3;
+  --color-ink: #4a3c31;
+  --color-ink-soft: #7a6a5a;
+  --color-accent: #c9a877;
+
+  --color-blue: #5b8fc7;
+  --color-blue-light: #cfe3f5;
+  --color-blue-bg: #eef5fc;
+
+  --color-pink: #d97a95;
+  --color-pink-light: #fbdce4;
+  --color-pink-bg: #fdf1f4;
+
+  --font-heading: 'Ma Shan Zheng', 'Noto Sans TC', cursive;
+  --font-body: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+
+  --radius-blob: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background-color: var(--color-paper);
+  /* 紙張紋理：以多層淡色斑點與線性漸層模擬手繪紙感，不需外部圖片 */
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(201, 168, 119, 0.08) 0, transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(217, 122, 149, 0.07) 0, transparent 40%),
+    radial-gradient(circle at 75% 80%, rgba(91, 143, 199, 0.07) 0, transparent 45%),
+    repeating-linear-gradient(0deg, rgba(74, 60, 49, 0.015) 0px, rgba(74, 60, 49, 0.015) 1px, transparent 1px, transparent 3px);
+}
+
+.paper-bg {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 4vw, 3rem) clamp(1rem, 5vw, 2.5rem);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  text-align: center;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.eyebrow {
+  margin: 0 0 0.25rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--color-ink-soft);
+}
+
+.couple-names {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  margin: 0.2rem 0;
+  color: var(--color-ink);
+}
+
+.couple-names .amp {
+  color: var(--color-accent);
+  padding: 0 0.2em;
+}
+
+.wedding-date {
+  margin: 0.25rem 0;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--color-ink-soft);
+}
+
+.subtitle {
+  margin: 0.75rem 0 0;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--color-ink-soft);
+}
+
+.doodle-divider {
+  display: block;
+  width: min(300px, 60%);
+  height: 16px;
+  margin: 1.25rem auto 0;
+}
+
+/* ---------- Gender switch buttons ---------- */
+
+.gender-switch {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: clamp(1.75rem, 5vw, 3rem);
+}
+
+.switch-btn {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  padding: 0.6em 1.6em;
+  cursor: pointer;
+  background: #fff;
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-blob);
+  box-shadow: 3px 4px 0 rgba(74, 60, 49, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.switch-btn:hover {
+  transform: rotate(-1deg) translateY(-2px);
+  box-shadow: 4px 6px 0 rgba(74, 60, 49, 0.2);
+}
+
+.switch-btn:focus-visible {
+  outline: 3px dashed var(--color-accent);
+  outline-offset: 3px;
+}
+
+.switch-btn .btn-icon {
+  margin-right: 0.3em;
+}
+
+.switch-btn--male.active {
+  background: var(--color-blue-light);
+  border-color: var(--color-blue);
+  color: #2c4c6f;
+}
+
+.switch-btn--female.active {
+  background: var(--color-pink-light);
+  border-color: var(--color-pink);
+  color: #7c3752;
+}
+
+/* ---------- Panels ---------- */
+
+.dress-panel {
+  display: none;
+}
+
+.dress-panel.active {
+  display: block;
+  animation: fadeIn 0.45s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.color-section {
+  border: 2px dashed var(--color-accent);
+  border-radius: 28px;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  margin-bottom: 1.75rem;
+}
+
+.color-section--blue {
+  background: var(--color-blue-bg);
+  border-color: var(--color-blue);
+}
+
+.color-section--pink {
+  background: var(--color-pink-bg);
+  border-color: var(--color-pink);
+}
+
+.color-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  margin: 0 0 1rem;
+}
+
+.color-section--blue .color-title {
+  color: #2c4c6f;
+}
+
+.color-section--pink .color-title {
+  color: #7c3752;
+}
+
+/* ---------- Gallery ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: clamp(0.75rem, 2.5vw, 1.25rem);
+}
+
+.gallery-item {
+  margin: 0;
+  background: #fff;
+  border: 1px solid rgba(74, 60, 49, 0.15);
+  border-radius: 16px;
+  padding: 0.5rem;
+  text-align: center;
+  box-shadow: 2px 3px 0 rgba(74, 60, 49, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-3px) rotate(-0.5deg);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.gallery-item figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px dotted var(--color-accent);
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------- Responsive tweaks ---------- */
+
+@media (max-width: 420px) {
+  .gender-switch {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .switch-btn {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}

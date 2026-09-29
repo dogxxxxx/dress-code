@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <path d="M100,20 C150,10 190,50 185,100 C180,150 150,190 100,185 C50,180 15,150 20,100 C25,50 55,15 100,20 Z"
+        fill="#cfe3f5" stroke="#5b8fc7" stroke-width="4" stroke-dasharray="10 6"/>
+  <text x="100" y="95" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="16" fill="#3c6a9e">男賓客</text>
+  <text x="100" y="118" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="16" fill="#3c6a9e">藍色 03</text>
+</svg>
