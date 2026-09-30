@@ -59,18 +59,19 @@ body {
   margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-.eyebrow {
-  margin: 0 0 0.25rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  color: var(--color-ink-soft);
+.dress-theme {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
+  line-height: 1.4;
+  color: var(--color-ink);
 }
 
 .couple-names {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
   margin: 0.2rem 0;
   color: var(--color-ink);
 }
@@ -271,3 +272,25 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 }
+
+/* Outfit categories and full-length photo display */
+[hidden] { display: none !important; }
+.switch-btn--group.active { background: var(--color-paper-edge); border-color: var(--color-accent); }
+.outfit-switch { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+.outfit-btn { font: inherit; cursor: pointer; border: 1px solid var(--color-pink); border-radius: 999px; padding: 0.6rem 1.5rem; background: #fff; color: #7c3752; }
+.outfit-btn.active { background: var(--color-pink-light); }
+.outfit-btn:focus-visible { outline: 3px dashed var(--color-accent); outline-offset: 3px; }
+.gallery-item img { aspect-ratio: 1 / 1; object-fit: cover; }
+.gallery { align-items: start; }
+.gallery--group { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.gallery-empty { grid-column: 1 / -1; text-align: center; color: var(--color-ink-soft); padding: 2rem 0; }
+
+.photo-trigger { display: block; width: 100%; padding: 0; border: 0; border-radius: 12px; background: transparent; cursor: zoom-in; }
+.photo-trigger:focus-visible { outline: 3px dashed var(--color-accent); outline-offset: 3px; }
+.photo-viewer-open { overflow: hidden; }
+.photo-viewer { max-width: 95vw; max-height: 95dvh; padding: 3rem 1rem 1rem; border: 0; border-radius: 16px; background: var(--color-paper); color: var(--color-ink); }
+.photo-viewer::backdrop { background: rgba(0, 0, 0, 0.8); }
+.photo-viewer-image { display: block; width: auto; height: auto; max-width: 85vw; max-height: 75dvh; object-fit: contain; margin: auto; }
+.photo-viewer-caption { margin: 0.75rem 0 0; text-align: center; }
+.photo-viewer-close { position: absolute; top: 0.25rem; right: 0.5rem; width: 44px; height: 44px; border: 0; background: transparent; color: var(--color-ink); font-size: 2rem; cursor: pointer; }
+.photo-viewer-close:focus-visible { outline: 2px solid var(--color-accent); border-radius: 8px; }

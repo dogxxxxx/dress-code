@@ -12,10 +12,11 @@
 <body>
   <div class="paper-bg">
     <header class="site-header">
-      <p class="eyebrow">Wedding Dress Code</p>
-      <h1 class="couple-names">陳凱歆 <span class="amp">&amp;</span> 林宇彤</h1>
+      <!-- <h3 class="couple-names">凱歆 <span class="amp">&amp;</span> 宇彤</h3> -->
+      <h3 class="dress-theme" style="margin-bottom: 0px">著裝主題：半正式／派對<br>主題顏色：藍色／粉色</h3>
+      <h5 class="btw" style="margin-top: 4px;">男生若對於藍或粉較為苦惱，也歡迎使用白／黑色做部分搭配喔！</h5>
       <p class="wedding-date">婚禮日期：2026 / 11 / 14</p>
-      <p class="subtitle">歡迎參加我們的婚禮 🎉 請依照下方指南穿搭出席唷！</p>
+      <p class="subtitle">還沒想好要穿什麼嗎？<br>歡迎參考穿搭指南中的服裝風格與造型，期待大家一同盛裝出席！</p>
       <svg class="doodle-divider" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true">
         <path d="M0,10 Q15,0 30,10 T60,10 T90,10 T120,10 T150,10 T180,10 T210,10 T240,10 T270,10 T300,10"
               fill="none" stroke="#c9a877" stroke-width="2" stroke-linecap="round"/>
@@ -23,97 +24,58 @@
     </header>
 
     <nav class="gender-switch" aria-label="賓客類別切換">
-      <button type="button" class="switch-btn switch-btn--male active" data-target="male" aria-selected="true">
-        <span class="btn-icon" aria-hidden="true">🤵</span> 男賓客
+      <button type="button" class="switch-btn switch-btn--male active" data-target="male" aria-pressed="true" aria-controls="panel-male">
+        <span class="btn-icon" aria-hidden="true">🤵</span> 男生
       </button>
-      <button type="button" class="switch-btn switch-btn--female" data-target="female" aria-selected="false">
-        <span class="btn-icon" aria-hidden="true">👗</span> 女賓客
+      <button type="button" class="switch-btn switch-btn--female" data-target="female" aria-pressed="false" aria-controls="panel-female">
+        <span class="btn-icon" aria-hidden="true">👗</span> 女生
+      </button>
+      <button type="button" class="switch-btn switch-btn--group" data-target="group" aria-pressed="false" aria-controls="panel-group">
+        <span class="btn-icon" aria-hidden="true">📷</span> 合照
       </button>
     </nav>
 
     <main>
-      <section id="panel-male" class="dress-panel active">
+      <section id="panel-male" class="dress-panel active" aria-label="男賓客">
         <div class="color-section color-section--blue">
-          <h2 class="color-title"><span aria-hidden="true">💙</span> 藍色系</h2>
-          <div class="gallery">
-            <figure class="gallery-item">
-              <img src="images/male/blue/01.svg" alt="男賓客藍色系穿搭範例 1" loading="lazy">
-              <figcaption>範例 1</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/male/blue/02.svg" alt="男賓客藍色系穿搭範例 2" loading="lazy">
-              <figcaption>範例 2</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/male/blue/03.svg" alt="男賓客藍色系穿搭範例 3" loading="lazy">
-              <figcaption>範例 3</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <div class="color-section color-section--pink">
-          <h2 class="color-title"><span aria-hidden="true">💗</span> 粉色系</h2>
-          <div class="gallery">
-            <figure class="gallery-item">
-              <img src="images/male/pink/01.svg" alt="男賓客粉色系穿搭範例 1" loading="lazy">
-              <figcaption>範例 1</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/male/pink/02.svg" alt="男賓客粉色系穿搭範例 2" loading="lazy">
-              <figcaption>範例 2</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/male/pink/03.svg" alt="男賓客粉色系穿搭範例 3" loading="lazy">
-              <figcaption>範例 3</figcaption>
-            </figure>
-          </div>
+          <h2 class="color-title">男生穿搭參考（點擊放大）</h2>
+          <div class="gallery" data-gallery="male"></div>
         </div>
       </section>
-
-      <section id="panel-female" class="dress-panel" hidden>
-        <div class="color-section color-section--blue">
-          <h2 class="color-title"><span aria-hidden="true">💙</span> 藍色系</h2>
-          <div class="gallery">
-            <figure class="gallery-item">
-              <img src="images/female/blue/01.svg" alt="女賓客藍色系穿搭範例 1" loading="lazy">
-              <figcaption>範例 1</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/female/blue/02.svg" alt="女賓客藍色系穿搭範例 2" loading="lazy">
-              <figcaption>範例 2</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/female/blue/03.svg" alt="女賓客藍色系穿搭範例 3" loading="lazy">
-              <figcaption>範例 3</figcaption>
-            </figure>
-          </div>
+      <section id="panel-female" class="dress-panel" aria-label="女賓客" hidden>
+        <nav class="outfit-switch" aria-label="女賓客穿搭類別切換">
+          <button type="button" class="outfit-btn active" data-outfit="pants" aria-pressed="true" aria-controls="outfit-pants">褲裝</button>
+          <button type="button" class="outfit-btn" data-outfit="skirts" aria-pressed="false" aria-controls="outfit-skirts">裙裝</button>
+        </nav>
+        <div id="outfit-pants" class="outfit-panel color-section color-section--pink">
+          <h2 class="color-title">女生・褲裝（點擊放大）</h2>
+          <div class="gallery" data-gallery="pants"></div>
         </div>
-
-        <div class="color-section color-section--pink">
-          <h2 class="color-title"><span aria-hidden="true">💗</span> 粉色系</h2>
-          <div class="gallery">
-            <figure class="gallery-item">
-              <img src="images/female/pink/01.svg" alt="女賓客粉色系穿搭範例 1" loading="lazy">
-              <figcaption>範例 1</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/female/pink/02.svg" alt="女賓客粉色系穿搭範例 2" loading="lazy">
-              <figcaption>範例 2</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="images/female/pink/03.svg" alt="女賓客粉色系穿搭範例 3" loading="lazy">
-              <figcaption>範例 3</figcaption>
-            </figure>
-          </div>
+        <div id="outfit-skirts" class="outfit-panel color-section color-section--pink" hidden>
+          <h2 class="color-title">女生・裙裝（點擊放大）</h2>
+          <div class="gallery" data-gallery="skirts"></div>
+        </div>
+      </section>
+      <section id="panel-group" class="dress-panel" aria-label="合照" hidden>
+        <div class="color-section">
+          <h2 class="color-title">合照氛圍參考（點擊放大）</h2>
+          <div class="gallery gallery--group" data-gallery="group"></div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>期待與你相聚 💌</p>
+      <p>還是沒有靈感嗎？<br>請Google搜尋"Cocktail Attire/ Semi-Formal Attire"做為更多參考～<br>不用擔心太過隆重，請超級閃耀的盛裝前來！</p>
     </footer>
   </div>
 
+  <dialog class="photo-viewer" aria-label="照片放大檢視">
+    <button type="button" class="photo-viewer-close" aria-label="關閉大圖" autofocus>×</button>
+    <img class="photo-viewer-image" alt="">
+    <p class="photo-viewer-caption"></p>
+  </dialog>
+
+  <script src="js/photos.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
