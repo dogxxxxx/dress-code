@@ -35,7 +35,8 @@ window.dressCodePhotos = {
     "images/female/skirts/6.jpg",
     "images/female/skirts/7.png",
     "images/female/skirts/8.png",
-    "images/female/skirts/9.png"
+    "images/female/skirts/9.png",
+    "images/female/skirts/IMG_3878.jpeg"
   ],
   "group": [
     "images/group/1.png",
